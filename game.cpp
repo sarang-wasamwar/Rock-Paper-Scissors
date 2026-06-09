@@ -26,8 +26,7 @@ Move getComputerMove() {
 // Decide who wins.
 Winner determineWinner(Move player, Move computer) {
     if (player == computer) {
-        // TODO: Treat ties as no-win (do not count as player loss).
-        return COMPUTER;
+        return NOBODY;
     }
 
     if ((player == ROCK && computer == SCISSORS) ||
@@ -43,7 +42,8 @@ Winner determineWinner(Move player, Move computer) {
 void updateScore(Winner winner, int& playerScore, int& computerScore) {
     if (winner == PLAYER) {
         playerScore++;
-    } else {
+    }
+    else if (winner == COMPUTER) {
         computerScore++;
     }
 }

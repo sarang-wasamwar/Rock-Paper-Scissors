@@ -12,8 +12,9 @@ enum Move {
 
 // Winner outcome.
 enum Winner {
-    PLAYER = 0,
-    COMPUTER = 1
+    NOBODY = 0,
+    PLAYER = 1,
+    COMPUTER = 2
 };
 
 Move parseMove(const std::string& input);
