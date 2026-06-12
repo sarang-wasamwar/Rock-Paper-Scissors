@@ -13,6 +13,11 @@ int main() {
         std::string input;
         std::cout << "Your choice: ";
         std::getline(std::cin, input);
+        
+        if ( input != "0" && input != "1" && input != "2" && input != "3" ) {
+            std::cout << "Invalid Input! Please Ensure to Enter 0, 1, 2, or 3.\n" ;
+            continue ;
+        }
 
         Move playerMove = parseMove(input);
 
