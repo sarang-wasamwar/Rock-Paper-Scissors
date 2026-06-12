@@ -1,6 +1,7 @@
 #include "game.h"
 #include <cstdlib>
 #include <ctime>
+#include <experimental/random>
 
 // Convert user input to a Move.
 Move parseMove(const std::string& input) {
@@ -17,9 +18,7 @@ Move parseMove(const std::string& input) {
 
 // Computer move selection.
 Move getComputerMove() {
-    // TODO: Make computer choose a random move.
-    std::srand(static_cast<unsigned int>(std::time(nullptr)));
-    int value = 0;
+    int value = std::experimental::randint(0, 2);
     return static_cast<Move>(value);
 }
 
