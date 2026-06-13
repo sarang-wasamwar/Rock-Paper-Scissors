@@ -24,6 +24,8 @@ int main() {
         if (input == "0") {
             std::cout << "Exiting...\n";
             // TODO: Stop the game when the user chooses exit.
+            keepPlaying = false;
+            continue;
         }
 
         Move computerMove = getComputerMove();
