@@ -1,7 +1,7 @@
 #include "game.h"
 #include <cstdlib>
 #include <ctime>
-#include <experimental/random>
+#include <random>
 
 // Convert user input to a Move.
 Move parseMove(const std::string& input) {
@@ -18,8 +18,10 @@ Move parseMove(const std::string& input) {
 
 // Computer move selection.
 Move getComputerMove() {
-    int value = std::experimental::randint(0, 2);
-    return static_cast<Move>(value);
+    static std::random_device rd ;
+    static std:: mt19937 gen(rd());
+    static std::uniform_int_distribution<int> dist(0,2);
+    return static_cast<Move>(dist(gen));
 }
 
 // Decide who wins.
